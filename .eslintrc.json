@@ -1,0 +1,34 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "parser": "babel-eslint",
+  "globals": {
+    "__DEV__": true,
+    "describe": true,
+    "jest": true,
+    "test": true,
+    "expect": true,
+    "fetch": true,
+    "navigator": true,
+    "XMLHttpRequest": true,
+    "FormData": true,
+    "React$Element": true
+  },
+  "extends": ["standard", "standard-jsx"],
+  "rules": {
+    "indent": [
+      2,
+      2
+    ],
+    "linebreak-style": [
+      "error",
+      "unix"
+    ],
+    "quotes": [
+      "error",
+      "single"
+    ]
+  }
+}
