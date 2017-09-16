@@ -1,19 +1,22 @@
 import { StackNavigator } from 'react-navigation'
-import LoginScreen from '../Containers/LoginScreen'
-import LaunchScreen from '../Containers/LaunchScreen'
+import SignInScreen from '../Containers/SignInScreen'
+import ListScreen from '../Containers/ListScreen'
+import TaskScreen from '../Containers/TaskScreen'
 
 import styles from './Styles/NavigationStyles'
 
 // Manifest of possible screens
 const PrimaryNav = StackNavigator({
-  LoginScreen: { screen: LoginScreen },
-  LaunchScreen: { screen: LaunchScreen }
+  SignInScreen: { screen: SignInScreen },
+  ListScreen: { screen: ListScreen },
+  TaskScreen: { screen: TaskScreen }
 }, {
   // Default config for all screens
-  headerMode: 'none',
-  initialRouteName: 'LoginScreen',
+  initialRouteName: 'SignInScreen',
   navigationOptions: {
-    headerStyle: styles.header
+    headerStyle: styles.header,
+    headerTitleStyle: styles.title,
+    headerTintColor: 'white'
   }
 })
 
