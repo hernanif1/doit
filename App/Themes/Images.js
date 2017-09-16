@@ -5,6 +5,7 @@ const images = {
   logo: require('../Images/logo.png'),
   illustration: require('../Images/illustration.png'),
   background: require('../Images/background.png'),
+  gradientWhite: require('../Images/gradientWhite.png'),
 
   // Icons
   add: require('../Images/Icons/add.png'),
@@ -14,7 +15,7 @@ const images = {
   checkUndone: require('../Images/Icons/checkUndone.png'),
   checkUndoneActive: require('../Images/Icons/checkUndoneActive.png'),
   general: require('../Images/Icons/general.png'),
-  more: require('../Images/Icons/more.png'),
+  signOut: require('../Images/Icons/signOut.png'),
   moreDark: require('../Images/Icons/moreDark.png')
 }
 
