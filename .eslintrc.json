@@ -18,6 +18,13 @@
   },
   "extends": ["standard", "standard-jsx"],
   "rules": {
+    "brace-style": [
+      "error",
+      "1tbs",
+      {
+        "allowSingleLine": true
+      }
+    ],
     "indent": [
       2,
       2
