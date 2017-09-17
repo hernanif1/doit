@@ -13,7 +13,8 @@ const ListHeader = ({title}) => {
   return (
     <View style={{ flexDirection: 'row', marginTop: 22, alignItems: 'center', backgroundColor: Colors.white }}>
       <View style={{ flex: 1, flexDirection: 'row' }}>
-        { title === 'General'
+        {
+          title === 'General'
           ? <Image source={Images.general} style={{ width: 24, height: 24 }} />
           : <View style={{width: 24}} />
         }

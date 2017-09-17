@@ -1,24 +1,16 @@
 import React, { Component } from 'react'
-import { View, StatusBar } from 'react-native'
+import { View, StatusBar, ActivityIndicator } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from 'react-navigation'
 import { GoogleSignin } from 'react-native-google-signin'
 import ActionButton from 'react-native-action-button'
+import _ from 'lodash'
 
-import { TasksNotFound, ListsAndTasks, FilterTasks, SignOutButton } from 'doit/App/Components/'
+import { TasksNotFound, ListContent, SignOutButton } from 'doit/App/Components/'
 import { Colors } from 'doit/App/Themes/'
+import GoogleActions from 'doit/App/Redux/GoogleRedux'
 
-const responseApi = [
-  {data: [{id: 1, title: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,'}, {id: 2, title: 'teste 2', isChecked: true}, {id: 3, title: 'teste 3', isChecked: false}], title: 'General'},
-  {data: [{id: 4, title: 'teste 4', isChecked: false}, {id: 5, title: 'teste 5', isChecked: false}], title: 'lista 2'},
-  {data: [{id: 6, title: 'teste 6', isChecked: true}, {id: 7, title: 'teste 7', isChecked: false}], title: 'lista 3'},
-  {data: [{}], title: ''}
-]
-const filters = [
-  { title: 'all', active: true },
-  { title: 'done', active: false },
-  { title: 'undone', active: false }
-]
+let accessToken // TODO: Find a better pattern to accessToken
 
 class List extends Component {
   static navigationOptions = ({ navigation }) => {
@@ -36,25 +28,52 @@ class List extends Component {
   }
 
   componentDidMount () {
+    accessToken = this.props.store.accessToken
+    this.props.getListOfTasks(accessToken)
     this.props.navigation.setParams({ handleSignOut: this.handleSignOut.bind(this) })
   }
 
-  toogleCheck (id) {
+  handleFilter (filter) {
+    this.props.setFilter(filter)
   }
 
-  render () {
-    return (
-      <View style={{flexGrow: 1, backgroundColor: 'white'}}>
-        <StatusBar hidden={false} backgroundColor={Colors.blueDark} />
+  handleCheck (listId, taskId, currentStatus) {
+    let status = !currentStatus ? 'completed' : 'needsAction'
+    this.props.updateTask(listId, taskId, { status, completed: null }, accessToken)
+  }
 
+  filterList (listsAndTasks, filter) {
+    return listsAndTasks.map(list => {
+      let data = list.data.filter(task => {
+        if (filter === 'all') return true
+        if (filter === 'done') return task.isChecked
+        if (filter === 'undone') return !task.isChecked
+      })
+      if (data) return {...list, data}
+    })
+  }
+
+  renderLoading () {
+    return (
+      <View style={{flexGrow: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <ActivityIndicator color={Colors.blue} size='large' />
+      </View>
+    )
+  }
+
+  renderContent (listsAndTasksFiltered, filters) {
+    return (
+      <View style={{flexGrow: 1}}>
         {/* Content */}
         {
-          responseApi.length > 0
-          ? <ListsAndTasks data={responseApi} toogleCheck={this.toogleCheck} />
+          listsAndTasksFiltered.length > 0
+          ? <ListContent listsAndTasks={listsAndTasksFiltered}
+            filters={filters}
+            onFilter={this.handleFilter.bind(this)}
+            handleCheck={this.handleCheck.bind(this)}
+            />
           : <TasksNotFound />
         }
-
-        <FilterTasks filters={filters} />
 
         {/* Float Button */}
         <ActionButton
@@ -66,14 +85,34 @@ class List extends Component {
       </View>
     )
   }
+
+  render () {
+    const { listsAndTasks, fetching, filters } = this.props.store
+    const currentActiveFilter = _.find(filters, { active: true })
+    const listsAndTasksFiltered = this.filterList(listsAndTasks, currentActiveFilter.title)
+    const content = fetching ? this.renderLoading() : this.renderContent(listsAndTasksFiltered, filters)
+    return (
+      <View style={{flexGrow: 1, backgroundColor: 'white'}}>
+        <StatusBar hidden={false} backgroundColor={Colors.blueDark} />
+        { content }
+      </View>
+    )
+  }
 }
 
 const mapStateToProps = (state) => {
-  return {}
+  return {
+    store: {
+      ...state.google
+    }
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    updateTask: (listId, taskId, data, token) => dispatch(GoogleActions.updateTask(listId, taskId, data, token)),
+    setFilter: filter => dispatch(GoogleActions.setFilter(filter)),
+    getListOfTasks: token => dispatch(GoogleActions.listRequest(token)),
     goToTaskScreen: () => dispatch(NavigationActions.navigate({ routeName: 'TaskScreen' })),
     goToSignInScreen: () => dispatch(
       NavigationActions.reset({

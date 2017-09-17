@@ -16,11 +16,11 @@ import { Task, ListHeader } from './'
  * Lista os eventos
  * @param {eventList} events Lista dos eventos
  */
-const ListsAndTasks = ({ data }) => {
+const ListsAndTasks = ({ data, handleCheck }) => {
   return (
     <SectionList
       style={{ paddingHorizontal: 16 }}
-      renderItem={({item}) => <Task {...item} />}
+      renderItem={(props) => <Task listId={props.section.id} {...props.item} handleCheck={handleCheck} />}
       contentInset={{bottom: 100}}
       renderSectionHeader={({section}) => <ListHeader title={section.title} />}
       sections={data}
