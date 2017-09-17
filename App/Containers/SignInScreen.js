@@ -7,6 +7,7 @@ import SplashScreen from 'react-native-splash-screen'
 
 import { googleSigInOptions } from 'doit/App/Config/GoogleSigInConfig'
 import { Images } from 'doit/App/Themes'
+import GoogleActions from 'doit/App/Redux/GoogleRedux'
 import styles from './Styles/LoginScreenStyles'
 
 class SignIn extends Component {
@@ -16,11 +17,15 @@ class SignIn extends Component {
 
   async handleUser () {
     const user = await GoogleSignin.currentUserAsync()
-    if (user) this.props.goToListScreen()
+    if (user) {
+      this.props.setToken(user.accessToken)
+      this.props.goToListScreen()
+    }
   }
 
   async handleSignIn () {
-    await GoogleSignin.signIn()
+    let user = await GoogleSignin.signIn()
+    this.props.setToken(user.accessToken)
     this.props.goToListScreen()
   }
 
@@ -28,7 +33,7 @@ class SignIn extends Component {
     Keyboard.dismiss()
     await GoogleSignin.configure(googleSigInOptions)
     await this.handleUser()
-    SplashScreen.hide()
+    setTimeout(() => { SplashScreen.hide() }, 1000)
   }
 
   render () {
@@ -47,11 +52,12 @@ class SignIn extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {}
+  return { }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    setToken: token => dispatch(GoogleActions.setToken(token)),
     goToListScreen: () => dispatch(NavigationActions.navigate({ routeName: 'ListScreen' }))
   }
 }
