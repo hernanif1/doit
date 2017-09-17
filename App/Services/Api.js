@@ -1,8 +1,13 @@
 // a library to wrap and simplify api calls
 import apisauce from 'apisauce'
+import Config from 'react-native-config'
+
+// the OR operation is done due to testing purposes
+const BASE_URL = Config.API_URL || 'http://localhost:4000/'
+const API_KEY = Config.API_KEY || ''
 
 // our "constructor"
-const create = (baseURL = 'https://api.github.com/') => {
+const create = (baseURL = BASE_URL) => {
   // ------
   // STEP 1
   // ------
@@ -34,9 +39,9 @@ const create = (baseURL = 'https://api.github.com/') => {
   // Since we can't hide from that, we embrace it by getting out of the
   // way at this level.
   //
-  const getRoot = () => api.get('')
-  const getRate = () => api.get('rate_limit')
-  const getUser = (username) => api.get('search/users', {q: username})
+  const getListsOfTasks = token => api.get(`users/@me/lists/?key=${API_KEY}&access_token=${token}`)
+  const getTasksOfList = (listId, token) => api.get(`lists/${listId}/tasks/?key=${API_KEY}&access_token=${token}`)
+  const updateTask = (listId, taskId, data, token) => api.patch(`lists/${listId}/tasks/${taskId}?key=${API_KEY}&access_token=${token}`, data)
 
   // ------
   // STEP 3
@@ -52,9 +57,9 @@ const create = (baseURL = 'https://api.github.com/') => {
   //
   return {
     // a list of the API functions from step 2
-    getRoot,
-    getRate,
-    getUser
+    getListsOfTasks,
+    getTasksOfList,
+    updateTask
   }
 }
 

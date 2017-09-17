@@ -1,17 +1,9 @@
 import _ from 'lodash'
 
-export default ListsAndTasksToSection => {
-  // Format os textos de cada campo e cria a chave da section
-  let lists = _.map(ListsAndTasksToSection, function (item) {
-    return {
-      id: item.id,
-      title: item.title,
-      isChecked: item.status === 'completed'
-    }
-  })
-
+export default listsAndTasks => {
+  if (listsAndTasks.length === 0) return []
   // Group by key
-  lists = _.chain(lists)
+  let lists = _.chain(listsAndTasks)
     .groupBy('title')
     .map((key, values) => {
       return {
@@ -20,6 +12,5 @@ export default ListsAndTasksToSection => {
       }
     })
     .value()
-
   return lists
 }
