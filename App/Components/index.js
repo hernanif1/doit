@@ -6,5 +6,6 @@ import FilterTasks from './FilterTasks'
 import TasksNotFound from './TasksNotFound'
 import TextInputResize from './TextInputResize'
 import SignOutButton from './SignOutButton'
+import ListContent from './ListContent'
 
-export { Task, TaskEdit, ListHeader, ListsAndTasks, FilterTasks, TasksNotFound, TextInputResize, SignOutButton }
+export { Task, TaskEdit, ListHeader, ListContent, ListsAndTasks, FilterTasks, TasksNotFound, TextInputResize, SignOutButton }
