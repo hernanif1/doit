@@ -3,6 +3,7 @@ package com.doit;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.lugg.ReactNativeConfig.ReactNativeConfigPackage;
 import co.apptailor.googlesignin.RNGoogleSigninPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.facebook.react.ReactNativeHost;
@@ -25,7 +26,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-            new RNGoogleSigninPackage(),
+          new ReactNativeConfigPackage(),
+          new RNGoogleSigninPackage(),
           new SplashScreenReactPackage()
       );
     }
