@@ -19,10 +19,10 @@ class TextInputResize extends Component {
 
   render () {
     const { height } = this.state
-    let { title, handleValue, handleSubmitTasks, handleTaskFocus, index } = this.props
+    let { title, handleValue, handleSubmitTasks, handleTaskFocus, index, style } = this.props
     let newStyle = {
       height,
-      ...this.props.style
+      ...style
     }
     return (
       <TextInput
@@ -54,6 +54,6 @@ TextInputResize.propTypes = {
   handleSubmitTasks: PropTypes.func.isRequired,
   handleTaskFocus: PropTypes.func.isRequired,
   index: PropTypes.number.isRequired,
-  style: PropTypes.style
+  style: PropTypes.object
 }
 export default TextInputResize

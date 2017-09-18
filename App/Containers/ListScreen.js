@@ -74,6 +74,7 @@ class List extends Component {
     if (listsAndTasks[0].title === 'General' && listsAndTasks[0].data[0].title === '') {
       return listsAndTasks.slice(1)
     }
+    return listsAndTasks
   }
 
   renderLoading () {

@@ -4,12 +4,12 @@ import { View, Image, TouchableOpacity, StyleSheet } from 'react-native'
 import { TextInputResize } from 'doit/App/Components/'
 import { Colors, Images } from 'doit/App/Themes'
 
-const TaskEdit = ({props}) => {
+const TaskEdit = (props) => {
   let checkIcon = props.isActive ? Images.checkUndoneActive : Images.checkUndone
   return (
     <View style={styles.container}>
       <Image source={checkIcon} style={styles.mediumIcon} />
-      <TextInputResize {...props} style={styles.input} />
+      <TextInputResize {...props} style={{ fontSize: 16, color: Colors.black, flex: 1, marginTop: -14 }} />
 
       {/* remove task button */}
       {

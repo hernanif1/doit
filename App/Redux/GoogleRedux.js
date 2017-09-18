@@ -28,7 +28,13 @@ export default Creators
 /* ------------- Initial State ------------- */
 export const INITIAL_STATE = Immutable({
   accessToken: '',
-  create: {},
+  create: {
+    list: '',
+    tasks: [{
+      title: '',
+      isActive: true
+    }]
+  },
   listsAndTasks: [],
   filters: [
     { title: 'all', active: true },
