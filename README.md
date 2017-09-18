@@ -6,6 +6,7 @@
 * Config the android (just download the android sdk or install android studio)
 * Any doubt check the firs-steps (https://facebook.github.io/react-native)
 * NodeJs 6+
+* React-native *Bulding projects with Native Code Target: android (https://facebook.github.io/react-native/docs/getting-started.html)
 
 ## :arrow_up: How to Setup
 
