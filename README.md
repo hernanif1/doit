@@ -4,7 +4,7 @@
 ## Requirements
 - [Node](https://nodejs.org) `6.x` or newer
 - [React Native](http://facebook.github.io/react-native/docs/getting-started.html) for development
-- [Xcode](https://developer.apple.com/xcode/) for iOS development
+- ~~[Xcode](https://developer.apple.com/xcode/) for iOS development (coming soon)~~
 - [Android Studio](https://developer.android.com/studio/index.html) for Android development
 - [Android SDK](https://developer.android.com/sdk/) `23.0.2` or newer for Android development
 - [Genymotion](https://www.genymotion.com/) for Android emulation or
@@ -45,7 +45,7 @@ API_KEY={YOUR_GOOGLE_API_TOKEN}
 ## Build the Android APP
 1. cd to the repo
 2. Run Build for either OS
-  * for iOS (comming soon)
+  * ~~for iOS~~ (coming soon)
   * for Android
     * Run Genymotion or Android device
     * run `react-native run-android`
