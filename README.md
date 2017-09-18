@@ -59,7 +59,8 @@ $ jest
 
 
 ## TODO
-- [ ] remove items from list screen
+- [ ] 100% coverage tests
+- [ ] remove tasks in list screen
 - [ ] ios version
 - [ ] drag'n drop items
 - [ ] offline first
