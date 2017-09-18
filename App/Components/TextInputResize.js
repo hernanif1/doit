@@ -13,10 +13,8 @@ class TextInputResize extends Component {
     }
   }
 
-  updateSize = (height) => {
-    this.setState({
-      height
-    })
+  updateSize = height => {
+    this.setState({ height })
   }
 
   render () {
