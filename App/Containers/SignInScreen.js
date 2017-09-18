@@ -20,6 +20,8 @@ class SignIn extends Component {
     if (user) {
       this.props.setToken(user.accessToken)
       this.props.goToListScreen()
+    } else {
+      SplashScreen.hide()
     }
   }
 
@@ -33,7 +35,6 @@ class SignIn extends Component {
     Keyboard.dismiss()
     await GoogleSignin.configure(googleSigInOptions)
     await this.handleUser()
-    setTimeout(() => { SplashScreen.hide() }, 1000)
   }
 
   render () {

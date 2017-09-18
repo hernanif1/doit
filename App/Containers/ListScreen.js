@@ -9,6 +9,7 @@ import _ from 'lodash'
 import { TasksNotFound, ListContent, SignOutButton } from 'doit/App/Components/'
 import { Colors } from 'doit/App/Themes/'
 import GoogleActions from 'doit/App/Redux/GoogleRedux'
+import SplashScreen from 'react-native-splash-screen'
 
 let accessToken // TODO: Find a better pattern to accessToken
 
@@ -32,6 +33,7 @@ class List extends Component {
     accessToken = this.props.store.accessToken
     this.props.getListOfTasks(accessToken)
     this.props.navigation.setParams({ handleSignOut: this.handleSignOut.bind(this) })
+    SplashScreen.hide()
   }
 
   handleFilter (filter) {
