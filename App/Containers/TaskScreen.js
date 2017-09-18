@@ -78,7 +78,7 @@ class Task extends Component {
   render () {
     return (
       <View style={{ flexGrow: 1, backgroundColor: Colors.white }}>
-        {/* Modal after saving tasks */}
+        {/* Modal after save tasks */}
         <Modal
           animationType='fade'
           transparent

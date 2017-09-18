@@ -1,6 +1,5 @@
 import React from 'react'
 import { View, Image, TouchableOpacity, StyleSheet } from 'react-native'
-import PropTypes from 'prop-types'
 
 import { TextInputResize } from 'doit/App/Components/'
 import { Colors, Images } from 'doit/App/Themes'
@@ -41,9 +40,5 @@ const styles = StyleSheet.create({
     height: 16
   }
 })
-
-TaskEdit.propTypes = {
-
-}
 
 export default TaskEdit
