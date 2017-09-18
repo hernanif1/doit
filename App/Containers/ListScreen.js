@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { View, StatusBar, ActivityIndicator } from 'react-native'
+import { View, StatusBar, ActivityIndicator, Keyboard } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from 'react-navigation'
 import { GoogleSignin } from 'react-native-google-signin'
@@ -28,6 +28,7 @@ class List extends Component {
   }
 
   componentDidMount () {
+    Keyboard.dismiss()
     accessToken = this.props.store.accessToken
     this.props.getListOfTasks(accessToken)
     this.props.navigation.setParams({ handleSignOut: this.handleSignOut.bind(this) })
@@ -43,6 +44,7 @@ class List extends Component {
   }
 
   filterList (listsAndTasks, filter) {
+    if (!listsAndTasks) return []
     return listsAndTasks.map(list => {
       let data = list.data.filter(task => {
         if (filter === 'all') return true
@@ -51,6 +53,23 @@ class List extends Component {
       })
       if (data) return {...list, data}
     })
+  }
+
+  checkIfContentExist (listsAndTasks) {
+    if (listsAndTasks.length === 0) return false
+    if (listsAndTasks.length > 1) return true
+    if (listsAndTasks[0].data.length === 0) return true // if 0 is because is a filter
+    if (listsAndTasks[0].data.length > 1) return true
+    if (listsAndTasks[0].data[0].title === '') return false
+    return true
+  }
+
+  hideGeneralListIfIsEmpty (listsAndTasks) {
+    if (listsAndTasks.length === 0) return listsAndTasks
+    if (listsAndTasks[0].data.length > 1) return listsAndTasks
+    if (listsAndTasks[0].title === 'General' && listsAndTasks[0].data[0].title === '') {
+      return listsAndTasks.slice(1)
+    }
   }
 
   renderLoading () {
@@ -66,11 +85,12 @@ class List extends Component {
       <View style={{flexGrow: 1}}>
         {/* Content */}
         {
-          listsAndTasksFiltered.length > 0
+          this.checkIfContentExist(listsAndTasksFiltered)
           ? <ListContent listsAndTasks={listsAndTasksFiltered}
             filters={filters}
             onFilter={this.handleFilter.bind(this)}
             handleCheck={this.handleCheck.bind(this)}
+            deleteTask={this.deleteTask.bind(this)}
             />
           : <TasksNotFound />
         }
@@ -89,7 +109,8 @@ class List extends Component {
   render () {
     const { listsAndTasks, fetching, filters } = this.props.store
     const currentActiveFilter = _.find(filters, { active: true })
-    const listsAndTasksFiltered = this.filterList(listsAndTasks, currentActiveFilter.title)
+    const listAndTaskGeneral = this.hideGeneralListIfIsEmpty(listsAndTasks)
+    const listsAndTasksFiltered = this.filterList(listAndTaskGeneral, currentActiveFilter.title)
     const content = fetching ? this.renderLoading() : this.renderContent(listsAndTasksFiltered, filters)
     return (
       <View style={{flexGrow: 1, backgroundColor: 'white'}}>
@@ -113,6 +134,7 @@ const mapDispatchToProps = (dispatch) => {
     updateTask: (listId, taskId, data, token) => dispatch(GoogleActions.updateTask(listId, taskId, data, token)),
     setFilter: filter => dispatch(GoogleActions.setFilter(filter)),
     getListOfTasks: token => dispatch(GoogleActions.listRequest(token)),
+    deleteTask: (listId, taskId, token) => dispatch(GoogleActions.deleteTaskRequest(listId, taskId, token)),
     goToTaskScreen: () => dispatch(NavigationActions.navigate({ routeName: 'TaskScreen' })),
     goToSignInScreen: () => dispatch(
       NavigationActions.reset({

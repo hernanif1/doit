@@ -58,7 +58,12 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     setToken: token => dispatch(GoogleActions.setToken(token)),
-    goToListScreen: () => dispatch(NavigationActions.navigate({ routeName: 'ListScreen' }))
+    goToListScreen: () => dispatch(
+      NavigationActions.reset({
+        index: 0,
+        actions: [ NavigationActions.navigate({ routeName: 'ListScreen' }) ]
+      })
+    )
   }
 }
 

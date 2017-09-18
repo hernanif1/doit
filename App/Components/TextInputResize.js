@@ -20,30 +20,30 @@ class TextInputResize extends Component {
 
   render () {
     const { height } = this.state
-
+    let { title, handleValue, handleSubmitTasks, handleTaskFocus, index } = this.props
     let newStyle = {
       height,
       ...this.props.style
     }
-
     return (
       <TextInput
         placeholder='Describe your task'
         placeholderTextColor={Colors.grayLight}
         underlineColorAndroid='transparent'
         selectionColor={Colors.blue}
-        onSubmitEditing={() => false}
-        returnKeyType='go'
+        onSubmitEditing={() => handleSubmitTasks()}
         maxHeight={200}
         minHeight={45}
         maxLength={80}
-        onChangeText={(value) => this.setState({value})}
+        onChangeText={value => handleValue(value, index)}
+        onFocus={value => handleTaskFocus(index)}
         style={[newStyle]}
         editable
         autoFocus
         multiline
-        value={this.state.value}
+        value={title}
         onContentSizeChange={(e) => this.updateSize(e.nativeEvent.contentSize.height)}
+        returnKeyType='go'
       />
     )
   }

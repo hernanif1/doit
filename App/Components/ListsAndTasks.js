@@ -20,7 +20,7 @@ const ListsAndTasks = ({ data, handleCheck }) => {
   return (
     <SectionList
       style={{ paddingHorizontal: 16 }}
-      renderItem={(props) => <Task listId={props.section.id} {...props.item} handleCheck={handleCheck} />}
+      renderItem={props => <Task listId={props.section.id} {...props.item} handleCheck={handleCheck} />}
       contentInset={{bottom: 100}}
       renderSectionHeader={({section}) => <ListHeader title={section.title} />}
       sections={data}

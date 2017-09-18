@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
   }
 })
 FilterTasks.propTypes = {
-
+  filters: PropTypes.array.isRequired,
+  handleFilter: PropTypes.func.isRequired
 }
 export default FilterTasks
