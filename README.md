@@ -4,7 +4,7 @@
 ## Requirements
 - [Node](https://nodejs.org) `6.x` or newer
 - [React Native](http://facebook.github.io/react-native/docs/getting-started.html) for development
-- ~~[Xcode](https://developer.apple.com/xcode/) for iOS development (coming soon)~~
+- ~~[Xcode](https://developer.apple.com/xcode/) for iOS development~~ (coming soon)
 - [Android Studio](https://developer.android.com/studio/index.html) for Android development
 - [Android SDK](https://developer.android.com/sdk/) `23.0.2` or newer for Android development
 - [Genymotion](https://www.genymotion.com/) for Android emulation or
