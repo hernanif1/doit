@@ -4,18 +4,6 @@ import PropTypes from 'prop-types'
 
 import { Task, ListHeader } from './'
 
-/**
-*  @typedef eventList
-*  @type {array}
-*  @property {string} day Dia do evento por extenso em 3 letras (ex: Ter)
-*  @property {string} description Descrição do evento
-*  @property {string} dateTime Data e hora do evento (ex: 25 de novembro às 18:30)
-*/
-
-/**
- * Lista os eventos
- * @param {eventList} events Lista dos eventos
- */
 const ListsAndTasks = ({ data, handleCheck }) => {
   return (
     <SectionList
@@ -30,6 +18,8 @@ const ListsAndTasks = ({ data, handleCheck }) => {
 }
 
 ListsAndTasks.propTypes = {
+  data: PropTypes.array.isRequired,
+  handleCheck: PropTypes.func.isRequired
 }
 
 export default ListsAndTasks

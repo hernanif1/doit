@@ -11,11 +11,11 @@ import { Colors } from 'doit/App/Themes/'
 
 const FilterTasks = ({ filters, handleFilter }) => {
   return (
-    <Image source={Images.gradientWhite} resizeMode='cover' style={{ position: 'absolute', bottom: 0, flexDirection: 'row', padding: 16, height: 88, alignItems: 'center' }}>
+    <Image source={Images.gradientWhite} resizeMode='cover' style={styles.background}>
       {filters.map(item => {
         let color = item.active ? [styles.item, styles.active] : styles.item
         return (
-          <TouchableOpacity key={item.title} onPress={() => handleFilter(item.title)} style={{ flexDirection: 'row', paddingVertical: 5 }}>
+          <TouchableOpacity key={item.title} onPress={() => handleFilter(item.title)} style={styles.filterButton}>
             <Text style={color}>{item.title}</Text>
           </TouchableOpacity>
         )
@@ -23,7 +23,20 @@ const FilterTasks = ({ filters, handleFilter }) => {
     </Image>
   )
 }
+
 const styles = StyleSheet.create({
+  background: {
+    position: 'absolute',
+    bottom: 0,
+    flexDirection: 'row',
+    padding: 16,
+    height: 88,
+    alignItems: 'center'
+  },
+  filterButton: {
+    flexDirection: 'row',
+    paddingVertical: 5
+  },
   active: {
     backgroundColor: Colors.grayLight,
     color: Colors.white
@@ -42,6 +55,7 @@ const styles = StyleSheet.create({
     textAlignVertical: 'center'
   }
 })
+
 FilterTasks.propTypes = {
   filters: PropTypes.array.isRequired,
   handleFilter: PropTypes.func.isRequired

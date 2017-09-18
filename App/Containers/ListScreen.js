@@ -43,6 +43,10 @@ class List extends Component {
     this.props.updateTask(listId, taskId, { status, completed: null }, accessToken)
   }
 
+  deleteTask (listId, taskId) {
+    this.props.deleteTask(listId, taskId, accessToken)
+  }
+
   filterList (listsAndTasks, filter) {
     if (!listsAndTasks) return []
     return listsAndTasks.map(list => {

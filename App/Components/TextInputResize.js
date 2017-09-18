@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { TextInput } from 'react-native'
+import PropTypes from 'prop-types'
 
 import { Colors } from 'doit/App/Themes/'
 
@@ -47,5 +48,14 @@ class TextInputResize extends Component {
       />
     )
   }
+}
+
+TextInputResize.propTypes = {
+  title: PropTypes.string,
+  handleValue: PropTypes.func.isRequired,
+  handleSubmitTasks: PropTypes.func.isRequired,
+  handleTaskFocus: PropTypes.func.isRequired,
+  index: PropTypes.number.isRequired,
+  style: PropTypes.style
 }
 export default TextInputResize
