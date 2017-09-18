@@ -22,14 +22,14 @@ Project Setting (gear icon)
 Add the project (package name com.doit)
 
 In the field SHA certificate fingerprints put yout sha1 code  see how (https://developers.google.com/maps/documentation/android-api/signup)
-**Step 6:** Get the api key to your project https://console.developers.google.com/cloud-resource-manager
+**Step 5:** Get the api key to your project https://console.developers.google.com/cloud-resource-manager
 Access your project
 In the search look for Task API
 Activate It
 In the menu click in credentials
 Get the api key to put in the .env file bellow
 
-**Step 7:** Create a .env file (in the root of the project) with the env variables
+**Step 6:** Create a .env file (in the root of the project) with the env variables
 ```
 API_URL=https://www.googleapis.com/tasks/v1/
 API_KEY={YOUR_GOOGLE_API_TOKEN}
