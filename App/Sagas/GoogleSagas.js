@@ -6,12 +6,14 @@ import removeLastBlankTask from 'doit/App/Transforms/removeLastBlankTask'
 export function * getListsOfTasks (api, { token }) {
   // make the call to the api
   const response = yield call(api.getListsOfTasks, token)
+  console.log('token', token)
   if (response.ok) {
     // format response
     let listsApi = response.data.items
     let listsAndTasksApi = yield getTasksFromLists(api, token, listsApi)
     let formatedListsAndTasks = formatListsAndTasks(listsAndTasksApi)
     let listsAndTasks = removeLastBlankTask(formatedListsAndTasks)
+    console.log('listsAndTasks', listsAndTasks)
     // dispatch action
     yield put(GoogleActions.listSuccess(listsAndTasks))
   } else {

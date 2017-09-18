@@ -62,7 +62,7 @@ class Task extends Component {
   componentWillReceiveProps (nextProps, nextState) {
     if (nextProps.store.saveSuccess && !this.state.saved) {
       this.setState({saved: true})
-      this.props.reloadListAndTasks(this.props.token)
+      this.props.reloadListAndTasks(this.props.store.accessToken)
       this.props.goBack()  // TODO: Search better aproach to avoid side effects
     }
   }
