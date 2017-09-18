@@ -22,6 +22,7 @@ Project Setting (gear icon)
 Add the project (package name com.doit)
 
 In the field SHA certificate fingerprints put yout sha1 code  see how (https://developers.google.com/maps/documentation/android-api/signup)
+
 **Step 5:** Get the api key to your project https://console.developers.google.com/cloud-resource-manager
 Access your project
 In the search look for Task API
