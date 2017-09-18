@@ -154,7 +154,6 @@ export const request = (state, { token }) => {
 
 // successful loaded lists
 export const success = (state, { records }) => {
-  console.log('records', records)
   return { ...state, fetching: false, error: false, listsAndTasks: records }
 }
 
