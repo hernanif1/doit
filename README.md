@@ -44,6 +44,12 @@ API_KEY={YOUR_GOOGLE_API_TOKEN}
     * run `react-native run-android`
 
 
+## :arrow_forward: How to Run tests
+1. In your terminal just run:
+```
+jest
+```
+
 **To Lint on Commit**
 This is implemented using [husky](https://github.com/typicode/husky). There is no additional setup needed.
 

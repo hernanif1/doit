@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`setFilter 1`] = `
+Array [
+  Object {
+    "active": true,
+    "title": "all",
+  },
+  Object {
+    "active": false,
+    "title": "done",
+  },
+  Object {
+    "active": false,
+    "title": "undone",
+  },
+]
+`;
+
+exports[`setFilter 2`] = `
+Array [
+  Object {
+    "active": false,
+    "title": "all",
+  },
+  Object {
+    "active": true,
+    "title": "done",
+  },
+  Object {
+    "active": false,
+    "title": "undone",
+  },
+]
+`;
+
+exports[`setFilter 3`] = `
+Array [
+  Object {
+    "active": false,
+    "title": "all",
+  },
+  Object {
+    "active": false,
+    "title": "done",
+  },
+  Object {
+    "active": true,
+    "title": "undone",
+  },
+]
+`;

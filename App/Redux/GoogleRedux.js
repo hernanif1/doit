@@ -149,7 +149,7 @@ export const setToken = (state, {token}) => {
 
 // request the user lists
 export const request = (state, { token }) => {
-  return { ...state, fetching: true, accessToken: state.accessToken }
+  return { ...state, fetching: true, accessToken: token }
 }
 
 // successful loaded lists

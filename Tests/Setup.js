@@ -1,4 +1,4 @@
-jest
-.mock('react-native-device-info', () => {
-  return { isTablet: jest.fn(() => { return false }) }
-})
+// jest
+// .mock('mock-plugin-name', () => {
+//   return { isTablet: jest.fn(() => { return false }) }
+// })
