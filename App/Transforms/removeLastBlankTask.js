@@ -1,5 +1,4 @@
 export default listsAndTasks => {
-  console.log('listsAndTasks', listsAndTasks)
   if (listsAndTasks.length >= 1) {
     let listsTasks = listsAndTasks.map((item, index) => {
       let lastItem = item.data.length - 1
