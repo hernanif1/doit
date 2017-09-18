@@ -133,6 +133,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-keyevent')
     compile project(':react-native-config')
     compile project(':react-native-google-signin')
     compile fileTree(dir: "libs", include: ["*.jar"])
