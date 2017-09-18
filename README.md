@@ -1,7 +1,11 @@
-#  doit
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+#  doIt! - Task Manager
 
-* Standard compliant React Native App Utilizing [Ignite](https://github.com/infinitered/ignite)
+* Simple todo app made in React-Native with Google SignIn and Rest Api's with Google Tasks
+
+## :arrow_up: Environment
+* Config the android (just download the android sdk or install android studio)
+* Any doubt check the firs-steps (https://facebook.github.io/react-native)
+* NodeJs 6+
 
 ## :arrow_up: How to Setup
 
@@ -16,10 +20,9 @@
 
 1. cd to the repo
 2. Run Build for either OS
-  * for iOS
-    * run `react-native run-ios`
+  * for iOS (comming soon)
   * for Android
-    * Run Genymotion
+    * Run Genymotion or plugin Android device
     * run `react-native run-android`
 
 ## :no_entry_sign: Standard Compliant
