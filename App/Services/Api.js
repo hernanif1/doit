@@ -41,7 +41,9 @@ const create = (baseURL = BASE_URL) => {
   //
   const getListsOfTasks = token => api.get(`users/@me/lists/?key=${API_KEY}&access_token=${token}`)
   const getTasksOfList = (listId, token) => api.get(`lists/${listId}/tasks/?key=${API_KEY}&access_token=${token}`)
-  const updateTask = (listId, taskId, data, token) => api.patch(`lists/${listId}/tasks/${taskId}?key=${API_KEY}&access_token=${token}`, data)
+  const updateTask = (listId, taskId, data, token) => api.patch(`lists/${listId}/tasks/${taskId}/?key=${API_KEY}&access_token=${token}`, data)
+  const createList = (data, token) => api.post(`/users/@me/lists/?key=${API_KEY}&access_token=${token}`, data)
+  const createTask = (listId, data, token) => api.post(`/lists/${listId}/tasks/?key=${API_KEY}&access_token=${token}`, data)
 
   // ------
   // STEP 3
@@ -59,7 +61,9 @@ const create = (baseURL = BASE_URL) => {
     // a list of the API functions from step 2
     getListsOfTasks,
     getTasksOfList,
-    updateTask
+    updateTask,
+    createList,
+    createTask
   }
 }
 

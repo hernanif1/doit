@@ -7,7 +7,7 @@ import DebugConfig from '../Config/DebugConfig'
 import { GoogleTypes } from '../Redux/GoogleRedux'
 
 /* ------------- Sagas ------------- */
-import { getListsOfTasks, updateTaskById } from './GoogleSagas'
+import { getListsOfTasks, updateTaskById, saveListAndTasks } from './GoogleSagas'
 
 /* ------------- API ------------- */
 
@@ -21,6 +21,7 @@ export default function * root () {
   yield all([
     // some sagas receive extra parameters in addition to an action
     takeLatest(GoogleTypes.LIST_REQUEST, getListsOfTasks, api),
-    takeLatest(GoogleTypes.UPDATE_TASK, updateTaskById, api)
+    takeLatest(GoogleTypes.UPDATE_TASK, updateTaskById, api),
+    takeLatest(GoogleTypes.SAVE_TASK_REQUEST, saveListAndTasks, api)
   ])
 }
