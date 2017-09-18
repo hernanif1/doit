@@ -66,8 +66,8 @@ $ jest
 - [ ] offline first
 - [ ] edit tasks in list screen
 - [ ] list screen menu more on section (remove all, done all, undone all)
-- [ ] implement crashlytics
-- [ ] implement analytics
+- [ ] add crashlytics
+- [ ] add analytics
 - [x] google sigin
 - [x] google task api integration
 - [x] create tasks and lists
