@@ -40,7 +40,7 @@ API_KEY={YOUR_GOOGLE_API_TOKEN}
 2. Run Build for either OS
   * for iOS (comming soon)
   * for Android
-    * Run Genymotion or plugin Android device
+    * Run Genymotion or Android device
     * run `react-native run-android`
 
 
