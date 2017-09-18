@@ -56,3 +56,15 @@ API_KEY={YOUR_GOOGLE_API_TOKEN}
 ```
 $ jest
 ```
+
+
+## TODO
+- [ ] remove items from list screen
+- [ ] ios version
+- [ ] drag'n drop items
+- [ ] offline first
+- [ ] edit tasks in list screen
+- [ ] list screen menu more on section (remove all, done all, undone all)
+- [x] google sigin
+- [x] google task api integration
+- [x] create tasks and lists
