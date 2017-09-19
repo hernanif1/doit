@@ -82,7 +82,8 @@ $ jest
 
 ## Known Issues
 The React-native plugin Google SignIn it doesn't recognize tasks permissions in some Google accounts,
-I'm still facing this problem, looking for how to remove this bug, or change the lib
+I'm still facing this problem, looking for how to remove this bug, or change the lib, there are an open issue in the react-native-google-signin repository
+
 
 ## TODO
 - [ ] 100% coverage tests
