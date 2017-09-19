@@ -1,5 +1,5 @@
 >## doIt! - Task Manager
-> Simple todo app made in React-Native with Google SignIn and Rest Api's with Google Tasks
+> Simple todo app made in React-Native with Google SignIn and Google Tasks Rest API's
 
 
 ## Example
