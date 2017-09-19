@@ -57,11 +57,11 @@ API_KEY={YOUR_GOOGLE_API_TOKEN}
 
 ## Build the APP in DEVELOPMENT
 1. cd to the repo
-2. Run Build for either OS
-  * ~~for iOS~~ (coming soon)
-  * for Android
-    * Run Genymotion or Android device
-    * run `react-native run-android`
+2. Run Build
+  * Run Genymotion or Android device
+  ```shell
+  $ react-native run-android
+  ```
 
 ## Build the APP in PRODUCTION
 Run
