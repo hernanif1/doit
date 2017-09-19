@@ -44,7 +44,7 @@ $ yarn install # Install Node.js components listed in ./package.json
 - After click in Project Setting (gear icon)
 - Add the project (package name com.doit)
 
-In the field SHA certificate fingerprints put yout sha1 code  see how (https://developers.google.com/maps/documentation/android-api/signup)
+In the field SHA certificate fingerprints put yout sha1 code [see how](https://developers.google.com/maps/documentation/android-api/signup)
 
 ## Get the api key to your project
 1. Access your google console developer project [see how](https://console.developers.google.com/cloud-resource-manager)
