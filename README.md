@@ -86,9 +86,9 @@ $ jest
 - [ ] list screen, insert menu more on section (remove all, done all, undone all)
 - [ ] add crashlytics
 - [ ] add analytics
-- [x] init project
 - [x] google sigin
 - [x] google task api integration
 - [x] create tasks and lists
+- [x] init project
 - [x] ux/ui
 - [x] logo
