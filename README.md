@@ -102,3 +102,8 @@ I'm still facing this problem, looking for how to remove this bug, or change the
 - [x] init project
 - [x] ux/ui
 - [x] logo
+
+
+## License
+
+doIt! (including the doIt! repo) is licensed under the MIT license
