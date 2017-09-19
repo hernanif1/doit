@@ -3,7 +3,7 @@
 
 
 ## Example
-Do you want to see how the app looks like? [Click here](https://www.behance.net/gallery/56769943/doIt)
+Do you want to know how the app looks like? [Click here](https://www.behance.net/gallery/56769943/doIt)
 
 
 ## Requirements
