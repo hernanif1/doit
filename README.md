@@ -1,8 +1,10 @@
 >## doIt! - Task Manager
 > Simple todo app made in React-Native with Google SignIn and Rest Api's with Google Tasks
 
+
 ## Example
 Want to see how the app looks like? [Click here](https://www.behance.net/gallery/56769943/doIt)
+
 
 ## Requirements
 - [Node](https://nodejs.org) `6.x` or newer
