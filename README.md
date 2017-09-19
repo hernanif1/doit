@@ -1,9 +1,9 @@
 >## doIt! - Task Manager
-> Simple todo app made in React-Native with Google SignIn and Rest Api's with Google Tasks
+> Simple todo app made in React-Native with Google SignIn and Google Tasks Rest API's
 
 
 ## Example
-Want to see how the app looks like? [Click here](https://www.behance.net/gallery/56769943/doIt)
+Do you want to know how the app looks like? [Click here](https://www.behance.net/gallery/56769943/doIt)
 
 
 ## Requirements
@@ -40,18 +40,18 @@ $ yarn install # Install Node.js components listed in ./package.json
 
 
 ## Set the project in google firebase console
-To compile this project with google sign you need to create a project in https://console.firebase.google.com
-After click in Project Setting (gear icon)
-Add the project (package name com.doit)
+- To compile this project with google sign you need to create a project in https://console.firebase.google.com
+- After click in Project Setting (gear icon)
+- Add the project (package name com.doit)
 
-In the field SHA certificate fingerprints put yout sha1 code  see how (https://developers.google.com/maps/documentation/android-api/signup)
+In the field SHA certificate fingerprints put yout sha1 code [see how](https://developers.google.com/maps/documentation/android-api/signup)
 
 ## Get the api key to your project
 1. Access your google console developer project [see how](https://console.developers.google.com/cloud-resource-manager)
 2. In the search look for Task API
 3. Activate It
 4. In the menu click in credentials
-5. Get the api key to put in the .env file bellow
+5. Get the api key to put in the .env file [see how](https://github.com/hernanif1/doit/blob/master/README.md#env-file)
 
 ## Env File
 Create a .env file (in the root of the project) with the env variables
@@ -63,7 +63,7 @@ API_KEY={YOUR_GOOGLE_API_TOKEN}
 ## Build the APP in DEVELOPMENT
 1. cd to the repo
 2. Run Build
-  * Run Genymotion or Android device [remember the dev mode](https://www.androidcentral.com/android-50-lollipop-basics-how-turn-developer-settings)
+  * Run Genymotion or Android device [remember how to activate dev mode](https://www.androidcentral.com/android-50-lollipop-basics-how-turn-developer-settings)
   ```shell
   $ react-native run-android
   ```
