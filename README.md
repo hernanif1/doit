@@ -40,9 +40,9 @@ $ yarn install # Install Node.js components listed in ./package.json
 
 
 ## Set the project in google firebase console
-To compile this project with google sign you need to create a project in https://console.firebase.google.com
-After click in Project Setting (gear icon)
-Add the project (package name com.doit)
+- To compile this project with google sign you need to create a project in https://console.firebase.google.com
+- After click in Project Setting (gear icon)
+- Add the project (package name com.doit)
 
 In the field SHA certificate fingerprints put yout sha1 code  see how (https://developers.google.com/maps/documentation/android-api/signup)
 
