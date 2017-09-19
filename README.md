@@ -81,7 +81,8 @@ $ jest
 ```
 
 ## Known Issues
-The React-native plugin Google SignIn it doesn't recognize tasks permissions in some Google accounts,
+The React-native plugin Google SignIn it doesn't recognize tasks permissions in some Google accounts, then, when you try to create a task it will crash the app because you don't have permission to read or insert :(
+
 I'm still facing this problem, looking for how to remove this bug, or change the lib, there are an open issue in the react-native-google-signin repository
 
 
