@@ -78,14 +78,17 @@ $ jest
 
 ## TODO
 - [ ] 100% coverage tests
-- [ ] remove tasks in list screen
+- [ ] delete tasks in list screen
 - [ ] ios version
-- [ ] drag'n drop items
+- [ ] drag'n drop tasks
 - [ ] offline first
 - [ ] edit tasks in list screen
-- [ ] list screen menu more on section (remove all, done all, undone all)
+- [ ] list screen, insert menu more on section (remove all, done all, undone all)
 - [ ] add crashlytics
 - [ ] add analytics
+- [x] init project
 - [x] google sigin
 - [x] google task api integration
 - [x] create tasks and lists
+- [x] ux/ui
+- [x] logo
