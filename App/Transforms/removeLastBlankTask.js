@@ -2,7 +2,13 @@ export default listsAndTasks => {
   if (listsAndTasks.length >= 1) {
     let listsTasks = listsAndTasks.map((item, index) => {
       let lastItem = item.data.length - 1
-      // check if the title is empty, but if is not the first element
+
+      // Check if element is empty
+      if (lastItem === -1) {
+        return item
+      }
+
+      // Check if the title is empty, but if is not the first element
       if (item.data[lastItem].title === '' && !(item.data.length === 1 && index === 0)) {
         return {
           ...item,

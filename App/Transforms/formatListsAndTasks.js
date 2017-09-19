@@ -3,7 +3,7 @@ export default listsAndTasks => {
     return {
       id: item.list.id,
       title: (index === 0) ? 'General' : item.list.title,
-      data: formatTasks(item.tasks)
+      data: item.tasks ? formatTasks(item.tasks) : []
     }
   })
 }
