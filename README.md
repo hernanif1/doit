@@ -51,7 +51,7 @@ In the field SHA certificate fingerprints put yout sha1 code [see how](https://d
 2. In the search look for Task API
 3. Activate It
 4. In the menu click in credentials
-5. Get the api key to put in the .env file bellow
+5. Get the api key to put in the .env file [see how](https://github.com/hernanif1/doit/blob/master/README.md#env-file)
 
 ## Env File
 Create a .env file (in the root of the project) with the env variables
