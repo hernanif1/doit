@@ -10,6 +10,19 @@
 - [Genymotion](https://www.genymotion.com/) for Android emulation or
 - [Android Lollipop](https://www.android.com/versions/lollipop-5-0/) or newer on your Android device to test properly
 
+## Stack
+- [React Native](https://facebook.github.io/react-native/) `0.47.x` for building native apps using react
+- [Redux](http://rackt.github.io/redux/index.html) `3.6.x` a predictable state container for Javascript apps
+- [Redux-Saga](https://github.com/redux-saga/redux-saga) `0.15.x` a predictable state container for Javascript apps
+- [Babel](http://babeljs.io/) `6.x.x` for ES6+ support
+- [Immutable](https://facebook.github.io/immutable-js/) Immutable persistent data collections for Javascript
+- [React Navigation](https://reactnavigation.org/) Navigation views that deliver 60fps animations
+- [Jest tests](https://facebook.github.io/jest/) JavaScript Testing
+- [React-Native Config](https://github.com/luggit/react-native-config) Environment for react-native
+- [Reactotron](https://github.com/infinitered/reactotron) Inspecting your React JS and React Native apps
+- [ESLint Standard](https://github.com/standard/eslint-config-standard) Rules for Javascript language
+- [Loadash](https://lodash.com/) Library delivering modularity, performance & extras
+- [Husky](https://github.com/typicode/husky/) Prevent bad commit, push and more
 
 ## Make the awesome
 Just clone the repo
@@ -17,7 +30,7 @@ and start :
 ```shell
 $ git clone https://github.com/hernanif1/doit
 $ cd doit
-$ yarn install                         # Install Node.js components listed in ./package.json
+$ yarn install # Install Node.js components listed in ./package.json
 ```
 
 
@@ -42,7 +55,7 @@ API_URL=https://www.googleapis.com/tasks/v1/
 API_KEY={YOUR_GOOGLE_API_TOKEN}
 ```
 
-## Build the Android APP
+## Build the APP in DEVELOPMENT
 1. cd to the repo
 2. Run Build for either OS
   * ~~for iOS~~ (coming soon)
@@ -50,6 +63,11 @@ API_KEY={YOUR_GOOGLE_API_TOKEN}
     * Run Genymotion or Android device
     * run `react-native run-android`
 
+## Build the APP in PRODUCTION
+Run
+```shell
+$ react-native run-android --variant=release
+```
 
 ## Run tests
 1. In your terminal just run:
