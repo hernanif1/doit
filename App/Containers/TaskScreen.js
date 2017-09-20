@@ -35,10 +35,14 @@ class Task extends Component {
   }
 
   handleValueTasks (value, index) {
+    if (value.trim() === this.props.store.create.tasks[index].title) {
+      this.handleSubmitTasks()
+    }
     this.props.setTaskValue(value, index)
   }
 
   handleSubmitTasks () {
+    console.log('handleSubmitTasks ')
     this.props.addEmptyTaskValue()
   }
 

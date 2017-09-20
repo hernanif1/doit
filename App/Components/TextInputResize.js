@@ -38,11 +38,12 @@ class TextInputResize extends Component {
         onFocus={value => handleTaskFocus(index)}
         style={[newStyle]}
         editable
+        enablesReturnKeyAutomatically
         autoFocus
         multiline
+        blurOnSubmit
         value={title}
         onContentSizeChange={(e) => this.updateSize(e.nativeEvent.contentSize.height)}
-        returnKeyType='go'
       />
     )
   }
