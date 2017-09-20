@@ -42,7 +42,6 @@ class Task extends Component {
   }
 
   handleSubmitTasks () {
-    console.log('handleSubmitTasks ')
     this.props.addEmptyTaskValue()
   }
 
