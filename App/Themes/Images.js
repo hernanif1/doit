@@ -17,7 +17,8 @@ const images = {
   general: require('../Images/Icons/general.png'),
   signOut: require('../Images/Icons/signOut.png'),
   moreDark: require('../Images/Icons/moreDark.png'),
-  trash: require('../Images/Icons/trash.png')
+  trash: require('../Images/Icons/trash.png'),
+  google: require('../Images/Icons/socialGoogleplus.png')
 }
 
 export default images

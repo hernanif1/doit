@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import { Image, StatusBar, Keyboard } from 'react-native'
+import { Image, StatusBar, Keyboard, TouchableOpacity, Text, View } from 'react-native'
 import { NavigationActions } from 'react-navigation'
-import { GoogleSignin, GoogleSigninButton } from 'react-native-google-signin'
+import GoogleSignIn from 'react-native-google-sign-in'
 import { connect } from 'react-redux'
 import SplashScreen from 'react-native-splash-screen'
 
-import { googleSigInOptions } from 'doit/App/Config/GoogleSigInConfig'
+import googleSigInOptions from 'doit/App/Config/GoogleSigInConfig'
 import { Images } from 'doit/App/Themes'
 import GoogleActions from 'doit/App/Redux/GoogleRedux'
 import styles from './Styles/LoginScreenStyles'
@@ -15,26 +15,17 @@ class SignIn extends Component {
     header: null
   }
 
-  async handleUser () {
-    const user = await GoogleSignin.currentUserAsync()
-    if (user) {
-      this.props.setToken(user.accessToken)
-      this.props.goToListScreen()
-    } else {
-      SplashScreen.hide()
-    }
-  }
-
   async handleSignIn () {
-    let user = await GoogleSignin.signIn()
+    await GoogleSignIn.configure(googleSigInOptions)
+    let user = await GoogleSignIn.signInPromise()
+    console.log('this.props', this.props)
     this.props.setToken(user.accessToken)
     this.props.goToListScreen()
   }
 
   async componentDidMount () {
     Keyboard.dismiss()
-    await GoogleSignin.configure(googleSigInOptions)
-    await this.handleUser()
+    await this.handleSignIn()
   }
 
   render () {
@@ -42,11 +33,12 @@ class SignIn extends Component {
       <Image source={Images.background} resizeMode='cover' style={[styles.backgroundImage, styles.centered]}>
         <StatusBar hidden />
         <Image source={Images.logo} style={styles.logo} />
-        <GoogleSigninButton
-          style={{ width: 312, height: 56, marginTop: 60 }}
-          size={GoogleSigninButton.Size.Wide}
-          color={GoogleSigninButton.Color.Light}
-          onPress={this.handleSignIn.bind(this)} />
+        <TouchableOpacity style={styles.buttonFull} onPress={() => this.handleSignIn()}>
+          <View style={styles.buttonContainer}>
+            <Image source={Images.google} style={[styles.googleIcon]} />
+            <Text style={styles.signInText}>Sign In</Text>
+          </View>
+        </TouchableOpacity>
       </Image>
     )
   }

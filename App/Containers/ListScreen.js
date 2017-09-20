@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { View, StatusBar, ActivityIndicator, Keyboard } from 'react-native'
 import { connect } from 'react-redux'
 import { NavigationActions } from 'react-navigation'
-import { GoogleSignin } from 'react-native-google-signin'
+import GoogleSignIn from 'react-native-google-sign-in'
 import ActionButton from 'react-native-action-button'
 import _ from 'lodash'
 
@@ -24,7 +24,7 @@ class List extends Component {
   }
 
   async handleSignOut () {
-    await GoogleSignin.signOut()
+    await GoogleSignIn.signOutPromise()
     this.props.goToSignInScreen()
   }
 

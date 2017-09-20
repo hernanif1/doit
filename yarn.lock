@@ -241,6 +241,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+andlog@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/andlog/-/andlog-1.0.0.tgz#25b39047ac9c1e5f6b2c8e4cdb5e7bf9e65e534b"
+
 ansi-escapes@^1.1.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/ansi-escapes/-/ansi-escapes-1.4.0.tgz#d3a8a83b319aa67793662b13e761c7911422306e"
@@ -1755,6 +1759,12 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+bows@^1.6.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/bows/-/bows-1.7.0.tgz#a3598ed9cef61a7a0cab1a7240f291654865ec76"
+  dependencies:
+    andlog "^1.0.0"
+
 bowser@^1.0.0, bowser@^1.6.0:
   version "1.7.3"
   resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.7.3.tgz#504bdb43118ca8db9cbbadf28fd60f265af96e4f"
@@ -2966,6 +2976,10 @@ escope@^3.6.0:
 eslint-config-standard-jsx@4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-4.0.1.tgz#cd4e463d0268e2d9e707f61f42f73f5b3333c642"
+
+eslint-config-standard-jsx@^4.0.2:
+  version "4.0.2"
+  resolved "https://registry.yarnpkg.com/eslint-config-standard-jsx/-/eslint-config-standard-jsx-4.0.2.tgz#009e53c4ddb1e9ee70b4650ffe63a7f39f8836e1"
 
 eslint-config-standard@10.2.1:
   version "10.2.1"
@@ -6404,6 +6418,12 @@ react-modal@^2.2.4:
     prop-types "^15.5.10"
     react-dom-factories "^1.0.0"
 
+react-native-action-button@^2.8.0:
+  version "2.8.0"
+  resolved "https://registry.yarnpkg.com/react-native-action-button/-/react-native-action-button-2.8.0.tgz#8446388f722c1a95619f28ab33b91bf9488075e9"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-animatable@^1.2.3:
   version "1.2.3"
   resolved "https://registry.yarnpkg.com/react-native-animatable/-/react-native-animatable-1.2.3.tgz#d0f0bd694833b934f3aaa1275739228b786ecb4b"
@@ -6442,6 +6462,21 @@ react-native-drawer@^2.3.0:
   dependencies:
     prop-types "^15.5.8"
     tween-functions "^1.0.1"
+
+react-native-firebase@^2.2.0:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/react-native-firebase/-/react-native-firebase-2.2.1.tgz#7f22245eba951cce4b72e4653170d59004c9b561"
+  dependencies:
+    bows "^1.6.0"
+    prop-types "^15.5.10"
+
+react-native-google-sign-in@^0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/react-native-google-sign-in/-/react-native-google-sign-in-0.0.16.tgz#5b05f3429c139859e653e1414524bc786870facd"
+
+react-native-keyevent@0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/react-native-keyevent/-/react-native-keyevent-0.0.7.tgz#ba07876522380f2285f96c908cf6828aa846a3f4"
 
 react-native-splash-screen@^3.0.1:
   version "3.0.1"
