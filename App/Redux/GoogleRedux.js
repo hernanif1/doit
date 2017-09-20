@@ -61,7 +61,6 @@ export const taskValue = (state, {value, index}) => {
 }
 
 export const addEmptyTaskValue = (state) => {
-  console.log('adicina"')
   let tasks = [...state.create.tasks]
   tasks = tasks.map(item => {
     return {...item, isActive: false}
