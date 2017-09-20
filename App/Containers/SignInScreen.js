@@ -18,7 +18,6 @@ class SignIn extends Component {
   async handleSignIn () {
     await GoogleSignIn.configure(googleSigInOptions)
     let user = await GoogleSignIn.signInPromise()
-    console.log('this.props', this.props)
     this.props.setToken(user.accessToken)
     this.props.goToListScreen()
   }
