@@ -110,23 +110,19 @@ export const resetCreatedTask = (state) => {
 }
 
 export const updateTask = (state, {listId, taskId, data, token}) => {
-  return { ...state }
+  let isChecked = data.status === 'completed'
+  let listsAndTasks = state.listsAndTasks.map(list => {
+    let tasks = list.data.map(task => {
+      if (task.id === taskId) return { ...task, isChecked }
+      return task
+    })
+    return {...list, data: tasks}
+  })
+  return { ...state, listsAndTasks }
 }
 
 export const updateTaskSuccess = (state, {records}) => {
-  let response = {
-    id: records.data.id,
-    title: records.data.title,
-    isChecked: records.data.status === 'completed'
-  }
-  let listsAndTasks = state.listsAndTasks.map(list => {
-    let data = list.data.map(task => {
-      if (task.id === records.data.id) return response
-      return task
-    })
-    return {...list, data}
-  })
-  return { ...state, fetching: false, error: false, listsAndTasks }
+  return { ...state, fetching: false, error: false }
 }
 
 export const updateTaskFailure = (state) => {
